@@ -3,9 +3,6 @@ import pandas as pd
 def get_teams_stats_through_week(team, week, data):
     games_before_week = data[data['week'] < week]
     team_games = games_before_week[((games_before_week['away_team'] == team) | (games_before_week['home_team'] == team))]
-    # print(f"Team: {team}, Week: {week}")
-    # print(f"Games found: {len(team_games)}")
-    # print(team_games)
     wins = 0
     losses = 0
     
@@ -56,9 +53,6 @@ def get_teams_stats_through_week(team, week, data):
 def get_teams_stats_including_week(team, week, data):
     games_before_week = data[data['week'] <= week]
     team_games = games_before_week[((games_before_week['away_team'] == team) | (games_before_week['home_team'] == team))]
-    # print(f"Team: {team}, Week: {week}")
-    # print(f"Games found: {len(team_games)}")
-    # print(team_games)
     wins = 0
     losses = 0
     
@@ -104,4 +98,3 @@ def get_teams_stats_including_week(team, week, data):
         "papg": (total_points_allowed / games_played),
         "point_diff": ((total_points_scored / games_played) - (total_points_allowed / games_played))
     }
-# return team's stats (wins, losses, points_for, points_against)
