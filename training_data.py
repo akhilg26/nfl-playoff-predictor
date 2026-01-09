@@ -38,10 +38,5 @@ for index, row in training_games.iterrows():
         'home_team_won': home_won
     }
     training_data.append(game_features)
-
-# print(training_data)
+    
 training_df = pd.DataFrame(training_data)
-# print("\nTraining Data:")
-# print(training_df)
-# print(f"\nShape: {training_df.shape}")
-# print(f"Home team won {training_df['home_team_won'].sum()} out of {len(training_df)} games")
